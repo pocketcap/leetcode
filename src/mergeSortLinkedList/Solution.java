@@ -6,7 +6,7 @@ package mergeSortLinkedList;
  */
 
 public class Solution {
-	public static ListNode mergeSortList(ListNode head) {
+	public ListNode mergeSortList(ListNode head) {
 		if (head == null || head.next == null)
 			return head;
 
@@ -35,7 +35,7 @@ public class Solution {
 		return merge(left, right);
 	}
 
-	public static ListNode merge(ListNode l, ListNode r) {
+	public ListNode merge(ListNode l, ListNode r) {
 		ListNode p1 = l;
 		ListNode p2 = r;
 		ListNode fakeHead = new ListNode(100);
@@ -69,38 +69,6 @@ public class Solution {
 			}
 		}
 		return fakeHead.next;
-	}
-
-	public static void main(String[] args) {
-		ListNode n1 = new ListNode(2);
-		ListNode n2 = new ListNode(3);
-		ListNode n3 = new ListNode(4);
-
-		ListNode n4 = new ListNode(3);
-		ListNode n5 = new ListNode(4);
-		ListNode n6 = new ListNode(5);
-
-		n1.next = n2;
-		n2.next = n3;
-		n3.next = n4;
-		n4.next = n5;
-		n5.next = n6;
-
-		n1 = mergeSortList(n1);
-
-		printList(n1);
-	}
-
-	public static void printList(ListNode x) {
-		if (x != null) {
-			System.out.print(x.val + " ");
-			while (x.next != null) {
-				System.out.print(x.next.val + " ");
-				x = x.next;
-			}
-			System.out.println();
-		}
-
 	}
 }
 
